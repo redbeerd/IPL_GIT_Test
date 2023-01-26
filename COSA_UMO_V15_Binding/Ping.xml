@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="913d83a7-614f-41d2-8dab-6202b1910d4e" isOneWay="false" action="ping" name="Ping" bindingOperationName="Ping" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="913d83a7-614f-41d2-8dab-6202b1910d4efileName">Ping</con:setting>
+  </con:settings>
+  <con:call id="40639e40-9b45-4c49-9ecf-2484b334a974" name="Ping Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5</con:endpoint>
+    <con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://ipl.stil.dk/services/cosa/umo/v1.5">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:Ping/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request>
+    <con:credentials>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ipl.stil.dk/services/cosa/umo/v1.5/COSA_UMO_V15_PortType/PingRequest"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

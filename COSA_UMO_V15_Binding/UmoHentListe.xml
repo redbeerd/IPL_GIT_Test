@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="c9014b0d-8413-46d6-9bf7-c6784baa4200" isOneWay="false" action="umoHentListe" name="UmoHentListe" bindingOperationName="UmoHentListe" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c9014b0d-8413-46d6-9bf7-c6784baa4200fileName">UmoHentListe</con:setting>
+  </con:settings>
+  <con:call id="ec92f447-8b25-4ae2-8454-ed24db87e772" name="UmoHentListe Request">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5</con:endpoint>
+    <con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:ns="http://xprs.dk/2005/08/17/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:UmoHentListeRequest>\r
+         <v1:Identifier>\r
+            <v1:SystemName>?</v1:SystemName>\r
+            <v1:SystemTransactionID>?</v1:SystemTransactionID>\r
+         </v1:Identifier>\r
+         <v1:Message>\r
+            <ns:UmoHentListeRequest>\r
+               <ns:CVRS>?</ns:CVRS>\r
+               <ns:CVRI>?</ns:CVRI>\r
+               <ns:SystemTypeKode>?</ns:SystemTypeKode>\r
+               <ns:SidstModtagneDelta>?</ns:SidstModtagneDelta>\r
+            </ns:UmoHentListeRequest>\r
+         </v1:Message>\r
+      </v1:UmoHentListeRequest>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request>
+    <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ipl.stil.dk/services/cosa/umo/v1.5/COSA_UMO_V15_PortType/UmoHentListeRequest"/>
+  </con:call>
+</con:operation>

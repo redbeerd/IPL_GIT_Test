@@ -1,0 +1,3256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="22cd2d51-a638-434a-a790-0747cdb1bc3c" wsaVersion="NONE" name="COSA_UMO_V15_Binding" type="wsdl" bindingName="{http://ipl.stil.dk/services/cosa/umo/v1.5}COSA_UMO_V15_Binding" soapVersion="1_2" anonymous="optional" definition="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?wsdl" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="22cd2d51-a638-434a-a790-0747cdb1bc3cfileName">COSA_UMO_V15_Binding</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?wsdl">
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?wsdl</con:url>
+      <con:content><![CDATA[<wsdl:definitions name="COSA_UMO" targetNamespace="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:import location="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?wsdl=common-resources/WSPolicy.wsdl" namespace="http://ipl.stil.dk/services/cosa/umo/v1.5"></wsdl:import>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ipl.stil.dk/services/cosa/umo/v1.5">
+      <xsd:include schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=COSA_UMO.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UmoHentMessageIn">
+    <wsdl:part element="tns:UmoHentRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UmoHentListeMessageIn">
+    <wsdl:part element="tns:UmoHentListeRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PingResponse">
+    <wsdl:part element="tns:PingResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UmoHentListeMessageOut">
+    <wsdl:part element="tns:UmoHentListeResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UmoHentMessageOut">
+    <wsdl:part element="tns:UmoHentResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Ping">
+    <wsdl:part element="tns:Ping" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ServiceException">
+    <wsdl:part element="tns:ServiceFaultDetailer" name="fault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="COSA_UMO_V15_PortType">
+    <wsdl:operation name="UmoHentListe">
+      <wsdl:input message="tns:UmoHentListeMessageIn" wsp:PolicyURIs="#AsymmetricX509TokensWithUntPolicy"></wsdl:input>
+      <wsdl:output message="tns:UmoHentListeMessageOut"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UmoHent">
+      <wsdl:input message="tns:UmoHentMessageIn" wsp:PolicyURIs="#AsymmetricX509TokensWithUntPolicy"></wsdl:input>
+      <wsdl:output message="tns:UmoHentMessageOut"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:Ping"></wsdl:input>
+      <wsdl:output message="tns:PingResponse"></wsdl:output>
+      <wsdl:fault message="tns:ServiceException" name="ServiceException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="COSA_UMO_V15_Binding" type="tns:COSA_UMO_V15_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UmoHentListe">
+      <soap12:operation soapAction="umoHentListe" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap12:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UmoHent">
+      <soap12:operation soapAction="umoHent" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ServiceException">
+        <soap12:fault name="ServiceException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="ping" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="COSA_UMO_V15">
+    <wsdl:port binding="tns:COSA_UMO_V15_Binding" name="COSA_UMO_V15_Port">
+      <soap12:address location="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+      <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?wsdl=common-resources/WSPolicy.wsdl</con:url>
+      <con:content><![CDATA[<definitions name="Policies" targetNamespace="http://policies.test.policy.ws.xml.sun.com/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <documentation>Security policy version 2.0 for Integrationsplatformen.</documentation>
+  <wsp:Policy wsu:Id="AsymmetricX509TokensWithUntPolicy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding>
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:WssX509V3Token10/>
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax/>
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp/>
+            <sp:ProtectTokens/>
+            <sp:OnlySignEntireHeadersAndBody/>
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:SignedParts>
+          <sp:Body/>
+          <sp:Header Name="Timestamp" Namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"/>
+        </sp:SignedParts>
+        <sp:Wss11>
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier/>
+          </wsp:Policy>
+        </sp:Wss11>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+</definitions>]]></con:content>
+      <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=COSA_UMO.xsd</con:url>
+      <con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:service="http://xprs.dk/2005/08/17/">
+  <xsd:include schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=common-resources/CommonTypes.xsd"/>
+  <xsd:import namespace="http://xprs.dk/2005/08/17/" schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/Uddannelsesmodelservice.xsd"/>
+  <xsd:element name="UmoHentListeRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:Identifier"/>
+        <xsd:element name="Message">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="service:UmoHentListeRequest"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UmoHentListeResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:Identifier"/>
+        <xsd:element ref="tns:CorrelationID"/>
+        <xsd:element name="Message">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="service:UmoHentListeResponse"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UmoHentRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:Identifier"/>
+        <xsd:element name="Message">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="service:UmoHentRequest"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="UmoHentResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="tns:Identifier"/>
+        <xsd:element ref="tns:CorrelationID"/>
+        <xsd:element name="Message">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="service:UmoHentResponse"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/Uddannelsesmodelservice.xsd</con:url>
+      <con:content><![CDATA[<schema elementFormDefault="qualified" targetNamespace="http://xprs.dk/2005/08/17/" xmlns:tns="http://xprs.dk/2005/08/17/" xmlns="http://www.w3.org/2001/XMLSchema">
+  <include schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/TotalUMFV1-5.xsd"/>
+  <group name="IdentifikationGroup">
+    <sequence>
+      <element name="CVRS" type="int"/>
+      <element name="CVRI" type="int"/>
+      <element name="SystemTypeKode" type="string"/>
+    </sequence>
+  </group>
+  <element name="UmoHentListeRequest">
+    <complexType>
+      <sequence>
+        <group ref="tns:IdentifikationGroup"/>
+        <element name="SidstModtagneDelta" type="int"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="UmoHentListeResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" minOccurs="0" name="Delta" type="int"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="UmoHentRequest">
+    <complexType>
+      <sequence>
+        <group ref="tns:IdentifikationGroup"/>
+        <element name="Delta" type="int"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="UmoHentResponse">
+    <complexType>
+      <sequence>
+        <group ref="tns:TotalUMFData"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ServiceFejlDetaljer">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" name="FejlKode" type="string"/>
+        <element minOccurs="0" name="Fejlmeddelelse" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/TotalUMFV1-5.xsd</con:url>
+      <con:content><![CDATA[<!--edited with XMLSpy v2019 sp2 (http://www.altova.com) by Frank Rise (Styrelsen for IT og Læring)-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xprs.dk/2005/08/17/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xprs.dk/2005/08/17/">
+  <xs:include schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/TabelTyperV1-5.xsd"/>
+  <!--=======================================================-->
+  <xs:group name="TotalUMFData">
+    <xs:sequence>
+      <xs:element name="UdmeldingsInformation" type="UdmeldingsInformationType"/>
+      <xs:element name="DomainTabel" type="DomainTabelType"/>
+      <xs:element name="DomainVaerdierTabel" type="DomainVaerdierTabelType"/>
+      <xs:element name="AdgangsvejTabel" type="AdgangsvejTabelType"/>
+      <xs:element name="BeregningstyperTabel" type="BeregningstypeTabelType"/>
+      <xs:element name="CentraleAfgangsAarsagerTabel" type="CentraleAfgangsAarsagerTabelType"/>
+      <xs:element name="ElevtypeSamlingTabel" type="ElevtypeSamlingTabelType"/>
+      <xs:element name="ElevtypeTabel" type="ElevtypeTabelType"/>
+      <xs:element name="ElevtypeByggeklodsTabel" type="ElevtypeByggeklodsTabelType"/>
+      <xs:element name="ElevtypeElevtypeSamlingTabel" type="ElevtypeElevtypeSamlingTabelType"/>
+      <xs:element name="EvalueringsformTabel" type="EvalueringsformTabelType"/>
+      <xs:element name="FaggrupperingTabel" type="FaggrupperingTabelType"/>
+      <xs:element name="FagkategoriTabel" type="FagkategoriTabelType"/>
+      <xs:element name="FormaalsgruppeTabel" type="FormaalsgruppeTabelType"/>
+      <xs:element name="FrmSprogTabel" type="FrmSprogTabelType"/>
+      <xs:element name="KarakterskalaTabel" type="KarakterskalaTabelType"/>
+      <xs:element name="KaraktertypeTabel" type="KaraktertypeTabelType"/>
+      <xs:element name="KompetenceTabel" type="KompetenceTabelType"/>
+      <xs:element name="NiveautyperTabel" type="NiveautypeTabelType"/>
+      <xs:element name="PeriodetypeTabel" type="PeriodetypeTabelType"/>
+      <xs:element name="ProeveOmraadeTabel" type="ProeveOmraadeTabelType"/>
+      <xs:element name="RegelgrundlagTabel" type="RegelgrundlagTabelType"/>
+      <xs:element name="TaksttypeTabel" type="TaksttypeTabelType"/>
+      <xs:element name="TilskudsmaerkeTabel" type="TilskudsmaerkeTabelType"/>
+      <xs:element name="TmkTabel" type="TmkTabelType"/>
+      <xs:element name="UdvalgTabel" type="UdvalgTabelType"/>
+      <xs:element name="BtypeTtypeTmerkerTabel" type="BtypeTtypeTmerkeTabelType"/>
+      <xs:element name="CoesaFormaalTabel" type="CoesaFormaalTabelType"/>
+      <xs:element name="UddannelseskarakteristikaTabel" type="UddannelsesKarakteristikaTabelType"/>
+      <xs:element name="ElevtyElevTyByggeklodsTabel" type="ElevtypeElevtypeByggeklodsTabelType"/>
+      <xs:element name="NiveauerTabel" type="NiveauTabelType"/>
+      <xs:element name="FagTabel" type="FagTabelType"/>
+      <xs:element name="KarakterVaerdiTabel" type="KarakterVaerdiTabelType"/>
+      <xs:element name="LoefteFagTabel" type="LoefteFagTabelType"/>
+      <xs:element name="KravDbFagTabel" type="KravDbFagTabelType"/>
+      <xs:element name="TaksonomiTabel" type="TaksonomiTabelType"/>
+      <xs:element name="TaksonomiVaerdiTabel" type="TaksonomiVaerdiTabelType"/>
+      <xs:element name="TakstTabel" type="TakstTabelType"/>
+      <xs:element name="EveGruppeTabel" type="EveGruppeTabelType"/>
+      <xs:element name="EveGruppeFagTabel" type="EveGruppeFagTabelType"/>
+      <xs:element name="EveGruppeTakstTabel" type="EveGruppeTakstTabelType"/>
+      <xs:element name="FagKonteringTabel" type="FagKonteringTabelType"/>
+      <xs:element name="UddannelseTabel" type="UddannelseTabelType"/>
+      <xs:element name="AmumaalTabel" type="AmuMaalTabelType"/>
+      <xs:element name="AmuProeveTabel" type="AmuProeveTabelType"/>
+      <xs:element name="AmuOpgaveSaetTabel" type="AmuOpgaveSaetTabelType"/>
+      <xs:element name="BevislinjeTabel" type="BevislinjeTabelType"/>
+      <xs:element name="MultiplanFagTabel" type="MultiplanFagTabelType"/>
+      <xs:element name="MultiplanFagValgmulighederTabel" type="MultiplanFagValgmulighederTabelType"/>
+      <xs:element name="StudieretHfOverbygTabel" type="StudieretHfOverbygTabelType"/>
+      <xs:element name="ElevtypeUddannelseTabel" type="ElevtypeUddannelseTabelType"/>
+      <xs:element name="FagFaggrupperingsTabel" type="FagFaggrupperingsTabelType"/>
+      <xs:element name="FagFrmSprogTabel" type="FagFrmSprogTabelType"/>
+      <xs:element name="FagUddTabel" type="FagUddTabelType"/>
+      <xs:element name="GodkendelsePaaSkoleTabel" type="GodkendelsePaaSkoleTabelType"/>
+      <xs:element name="KompetenceFagTabel" type="KompetenceFagTabelType"/>
+      <xs:element name="FagProeveTabel" type="FagProeveTabelType"/>
+      <xs:element name="FasteUnderfagTabel" type="FasteUnderfagTabelType"/>
+      <xs:element name="ProeveTabel" type="ProeveTabelType"/>
+      <xs:element name="MaalpindTabel" type="MaalpindTabelType"/>
+      <xs:element name="ProeveomraadeUddTabel" type="ProeveomraadeUddTabelType"/>
+      <xs:element name="RegelgrundlagFagTabel" type="RegelgrundlagFagTabelType"/>
+      <xs:element name="RegelgrundlagUddTabel" type="RegelgrundlagUddTabelType"/>
+      <xs:element name="SpecialeTabel" type="SpecialeTabelType"/>
+      <xs:element name="SpecialeTilSpecialeTabel" type="SpecialeTilSpecialeTabelType"/>
+      <xs:element name="SkoleperiodeTabel" type="SkoleperiodeTabelType"/>
+      <xs:element name="StudieretHfOverbygFagTabel" type="StudieretHfOverbygFagTabelType"/>
+      <xs:element name="TaelleperiodeTabel" type="TaelleperiodeTabelType"/>
+      <xs:element name="UddannelseAarsnormTabel" type="UddannelseAarsnormTabelType"/>
+      <xs:element name="UddFrmSprogTabel" type="UddFrmSprogTabelType"/>
+      <xs:element name="ElevtypeSpecialeTabel" type="ElevtypeSpecialeTabelType"/>
+      <xs:element name="ElevtypeSkoleperiodeTabel" type="ElevtypeSkoleperiodeTabelType"/>
+      <xs:element name="TilskudsmaerkeTmkTabel" type="TilskudsmaerkeTmkTabelType"/>
+      <xs:element name="UddannelseProeveTabel" type="UddannelseProeveTabelType"/>
+      <xs:element name="TmkSkoleperiodeTabel" type="TmkSkoleperiodeTabelType"/>
+      <xs:element name="TmkAauTabel" type="TmkAauTabelType"/>
+      <xs:element name="FagTakstTabel" type="FagTakstTabelType"/>
+      <xs:element name="UddannelseTakstTabel" type="UddannelseTakstTabelType"/>
+      <xs:element name="ResultatformTabel" type="ResultatformTabelType"/>
+      <xs:element name="ResultatformFagTabel" type="ResultatformFagTabelType"/>
+      <xs:element name="FagUddProeveTabel" type="FagUddProeveTabelType"/>
+      <xs:element name="FagSpecialeTabel" type="FagSpecialeTabelType"/>
+      <xs:element name="SuUddannelserTabel" type="SuUddannelserTabelType"/>
+      <xs:element name="JurEnhedAeAfdelingTabel" type="JurEnhedAeAfdelingTabelType"/>
+    </xs:sequence>
+  </xs:group>
+  <!--=======================================================-->
+  <!--==================== Filtertype =======================-->
+  <xs:simpleType name="FaellesFilterTabelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CoesaFormaal"/>
+      <xs:enumeration value="Uddannelse"/>
+      <xs:enumeration value="Fag"/>
+      <xs:enumeration value="FagUdd"/>
+      <xs:enumeration value="Regelgrundlag"/>
+      <xs:enumeration value="RegelgrundlagFag"/>
+      <xs:enumeration value="RegelgrundlagUdd"/>
+      <xs:enumeration value="FrmSprog"/>
+      <xs:enumeration value="FagFrmSprog"/>
+      <xs:enumeration value="UddFrmSprog"/>
+      <xs:enumeration value="Evalueringsform"/>
+      <xs:enumeration value="Karakterskala"/>
+      <xs:enumeration value="KarakterVaerdi"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--==================== Filtertype =======================-->
+  <xs:simpleType name="ProeveFilterTabelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FagFaggruppering"/>
+      <xs:enumeration value="Faggruppering"/>
+      <xs:enumeration value="FasteUnderfag"/>
+      <xs:enumeration value="KompetenceFag"/>
+      <xs:enumeration value="Kompetence"/>
+      <xs:enumeration value="Proeve"/>
+      <xs:enumeration value="ProeveomraadeUdd"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--==================== Filtertype =======================-->
+  <xs:simpleType name="TilskudFilterTabelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Adgangsvej"/>
+      <xs:enumeration value="CentraleAfgangsAarsager"/>
+      <xs:enumeration value="DeltagerbetalingGruppe"/>
+      <xs:enumeration value="DeltagerbetalingTakst"/>
+      <xs:enumeration value="FagDeltagerbetaling"/>
+      <xs:enumeration value="Fagkategori"/>
+      <xs:enumeration value="FagKontering"/>
+      <xs:enumeration value="FagTakst"/>
+      <xs:enumeration value="Formaalsgruppe"/>
+      <xs:enumeration value="IndgangHovedforloeb"/>
+      <xs:enumeration value="IndgangSpecialeTabelType"/>
+      <xs:enumeration value="IndgangSpecialeFagTabelType"/>
+      <xs:enumeration value="KaraktertypeTabelType"/>
+      <xs:enumeration value="GodkendelsePaaSkole"/>
+      <xs:enumeration value="LoefteFag"/>
+      <xs:enumeration value="Maalpind"/>
+      <xs:enumeration value="Periodetype"/>
+      <xs:enumeration value="Resultatform"/>
+      <xs:enumeration value="ResultatformFag"/>
+      <xs:enumeration value="Skoleperiode"/>
+      <xs:enumeration value="Speciale"/>
+      <xs:enumeration value="SpecialeTilSpeciale"/>
+      <xs:enumeration value="Taelleperiode"/>
+      <xs:enumeration value="Taksttype"/>
+      <xs:enumeration value="Takst"/>
+      <xs:enumeration value="Tilskudsmaerke"/>
+      <xs:enumeration value="Tmk"/>
+      <xs:enumeration value="TmkSkoleperiode"/>
+      <xs:enumeration value="TilskudsmaerkeTmk"/>
+      <xs:enumeration value="TmkAau"/>
+      <xs:enumeration value="UddannelseAarsnorm"/>
+      <xs:enumeration value="UddannelseTakst"/>
+      <xs:enumeration value="UddannelsesrettetOmraadefag"/>
+      <xs:enumeration value="VarighedPrFag"/>
+      <xs:enumeration value="FagSpeciale"/>
+      <xs:enumeration value="SuUddannelser"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/TabelTyperV1-5.xsd</con:url>
+      <con:content><![CDATA[<!--edited with XMLSpy v2019 sp2 (http://www.altova.com) by Frank Rise (Styrelsen for IT og Læring)-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xprs.dk/2005/08/17/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xprs.dk/2005/08/17/">
+  <xs:include schemaLocation="https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/FaellesTyperV1-5.xsd"/>
+  <!--=======================================================-->
+  <xs:complexType name="AdgangsvejInfoType">
+    <xs:sequence>
+      <xs:element name="AdgangsvejID" type="InternNoegleType"/>
+      <xs:element name="Adgangsvej" type="AdgangsvejType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AdgangsvejTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AdgangsvejInfo" type="AdgangsvejInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="AmuMaalInfoType">
+    <xs:sequence>
+      <xs:element name="FagID" type="InternNoegleType"/>
+      <xs:element name="CertMeritEud" type="CertMeritEudType"/>
+      <xs:element name="CertKontrUdd" type="CertKontrUddType"/>
+      <xs:element name="CertAdgMal" type="CertAdgMalType"/>
+      <xs:element minOccurs="0" name="Optagelse" type="OptagelseType"/>
+      <xs:element minOccurs="0" name="Indhold" type="IndholdType"/>
+      <xs:element minOccurs="0" name="Varighed" type="VarighedType"/>
+      <xs:element minOccurs="0" name="Eksamen" type="EksamenType"/>
+      <xs:element minOccurs="0" name="Maalformulering" type="MaalformuleringType"/>
+      <xs:element minOccurs="0" name="Bedoemmelser" type="BedoemmelserType"/>
+      <xs:element minOccurs="0" name="Certifikatuddannelser" type="CertifikatuddannelserType"/>
+      <xs:element minOccurs="0" name="Faelleskatalog" type="FaelleskatalogType"/>
+      <xs:element minOccurs="0" name="ModerUddId" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="StillerUdstyrTilR" type="StillerUdstyrTilRType"/>
+      <xs:element minOccurs="0" name="CertMyndighed" type="CertMyndighedType"/>
+      <xs:element minOccurs="0" name="CertBranche" type="CertBrancheType"/>
+      <xs:element minOccurs="0" name="CertUdsteder" type="CertUdstederType"/>
+      <xs:element minOccurs="0" name="CertNavn" type="CertNavnType"/>
+      <xs:element minOccurs="0" name="CertHjemmel" type="CertHjemmelType"/>
+      <xs:element minOccurs="0" name="CertAndetSprog" type="CertAndetSprogType"/>
+      <xs:element minOccurs="0" name="CertAndetSprogBemaerkning" type="CertAndetSprogBemaerkningType"/>
+      <xs:element minOccurs="0" name="CertBemaerkning" type="CertBemaerkningType"/>
+      <xs:element minOccurs="0" name="DispensationTil3AarsRegel" type="DispensationTil3AarsRegelType"/>
+      <xs:element minOccurs="0" name="Formaal" type="FormaalType"/>
+      <xs:element minOccurs="0" name="CertBeskrivelse" type="CertBeskrivelseType"/>
+      <xs:element minOccurs="0" name="Branchecertifikat" type="BranchecertifikatType"/>
+      <xs:element minOccurs="0" name="FagRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="Arkivdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmuMaalTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AmuMaalInfo" type="AmuMaalInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="AmuOpgaveSaetInfoType">
+    <xs:sequence>
+      <xs:element name="AmuProeveRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="BeskrivelseUpload" type="BeskrivelseUploadType"/>
+      <xs:element minOccurs="0" name="BedomGrundlagUpload" type="BedomGrundlagUploadType"/>
+      <xs:element minOccurs="0" name="BedomKritUpload" type="BedomKritUploadType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmuOpgaveSaetTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AmuOpgaveSaetInfo" type="AmuOpgaveSaetInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="AmuProeveInfoType">
+    <xs:sequence>
+      <xs:element name="AmuProeveID" type="InternNoegleType"/>
+      <xs:element name="AmuMaalRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="SkriftligProve" type="SkriftligProveType"/>
+      <xs:element name="MundtligProve" type="MundtligProveType"/>
+      <xs:element name="PraktiskProve" type="PraktiskProveType"/>
+      <xs:element name="ProveSelvstud" type="ProveSelvstudType"/>
+      <xs:element minOccurs="0" name="AndetTekst" type="AndetTekstType"/>
+      <xs:element minOccurs="0" name="ProveFjernund" type="ProveFjernundType"/>
+      <xs:element minOccurs="0" name="BeskrivelseTekst" type="BeskrivelseTekstType"/>
+      <xs:element minOccurs="0" name="BedomGrundlagTekst" type="BedomGrundlagTekstType"/>
+      <xs:element minOccurs="0" name="BedomKritTekst" type="BedomKritTekstType"/>
+      <xs:element minOccurs="0" name="DispLavAktivitet" type="DispLavAktivitetType"/>
+      <xs:element minOccurs="0" name="DispSaerligeOm" type="DispSaerligeOmType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmuProeveTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AmuProeveInfo" type="AmuProeveInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="BeregningstypeInfoType">
+    <xs:sequence>
+      <xs:element name="BeregningstypeID" type="InternNoegleType"/>
+      <xs:element name="Beregningstype" type="BeregningstypeType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BeregningstypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BeregningstypeInfo" type="BeregningstypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="BevislinjeInfoType">
+    <xs:sequence>
+      <xs:element name="BevislinjeID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="BevisFormat" type="BevisFormatType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element name="BevislinjeNr" type="BevislinjeNrType"/>
+      <xs:element name="Bevislinje" type="BevislinjeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BevislinjeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BevislinjeInfo" type="BevislinjeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="BtypeTtypeTmerkeInfoType">
+    <xs:sequence>
+      <xs:element name="BtypeTtypeTmerkeID" type="InternNoegleType"/>
+      <xs:element name="BeregningstypeRef" type="InternNoegleType"/>
+      <xs:element name="TaksttypeRef" type="InternNoegleType"/>
+      <xs:element name="TilskudsmaerkeRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BtypeTtypeTmerkeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BtypeTtypeTmerkeInfo" type="BtypeTtypeTmerkeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="CentraleAfgangsAarsagerInfoType">
+    <xs:sequence>
+      <xs:element name="CentralAfgangsAarsagID" type="InternNoegleType"/>
+      <xs:element name="AfgangsAarsag" type="AfgangsAarsagType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Gennemfoert" type="GennemfoertType"/>
+      <xs:element name="KvalificeretTilHovedforloeb" type="KvalificeretTilHovedforloebType"/>
+      <xs:element name="EASYPIndberet" type="EasyPIndberetType"/>
+      <xs:element name="UngeDatabaseIndberet" type="UngeDatabaseIndberetType"/>
+      <xs:element name="Ledelsesinformation" type="LedelsesInformationType"/>
+      <xs:element name="TvungenPerspektiv" type="TvungenPerspektivType"/>
+      <xs:element minOccurs="0" name="UngeDatabaseAfgangsAarsag" type="UngeDatabaseAfgangsAarsagType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CentraleAfgangsAarsagerTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CentraleAfgangsAarsagerInfo" type="CentraleAfgangsAarsagerInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="CoesaFormaalInfoType">
+    <xs:sequence>
+      <xs:element name="CoesaFormaalID" type="InternNoegleType"/>
+      <xs:element name="CoesaFormaal" type="CoesaFormaalType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="FormaalsgruppeRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="UdvalgRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoesaFormaalTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CoesaFormaalInfo" type="CoesaFormaalInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="DomainInfoType">
+    <xs:sequence>
+      <xs:element name="DomainID" type="InternNoegleType"/>
+      <xs:element name="Domain" type="DomainType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomainTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="DomainInfo" type="DomainInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="DomainVaerdierInfoType">
+    <xs:sequence>
+      <xs:element name="DomainVaerdiID" type="InternNoegleType"/>
+      <xs:element name="DomainRef" type="InternNoegleType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element minOccurs="0" name="DomainVaerdiString" type="DomainVaerdiStringType"/>
+      <xs:element minOccurs="0" name="DomainVaerdiInteger" type="DomainVaerdiIntegerType"/>
+      <xs:element minOccurs="0" name="Oplysning1" type="Oplysning1Type"/>
+      <xs:element minOccurs="0" name="Oplysning2" type="Oplysning2Type"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DomainVaerdierTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="DomainVaerdierInfo" type="DomainVaerdierInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeID" type="InternNoegleType"/>
+      <xs:element name="Elevtype" type="ElevtypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+      <xs:element name="Skolepraktik" type="SkolepraktikType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeInfo" type="ElevtypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeByggeklodsInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeByggeklodsID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeByggeklods" type="ElevtypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="UngdomVoksen" type="UngdomVoksenType"/>
+      <xs:element name="Talentspor" type="TalentsporType"/>
+      <xs:element name="Eux" type="EuxType"/>
+      <xs:element name="Gym" type="GymType"/>
+      <xs:element name="Mesterlere" type="MesterlereType"/>
+      <xs:element name="PskoleEud" type="PskoleEudType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeByggeklodsTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeByggeklodsInfo" type="ElevtypeByggeklodsInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeElevtypeByggeklodsInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeElevtypeByggeklodsID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeRef" type="InternNoegleType"/>
+      <xs:element name="ElevtypeByggeklodsRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeElevtypeByggeklodsTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeElevtypeByggeklodsInfo" type="ElevtypeElevtypeByggeklodsInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeElevtypeSamlingInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeElevtypeSamlingID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeSamlingRef" type="InternNoegleType"/>
+      <xs:element name="ElevtypeRef" type="InternNoegleType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeElevtypeSamlingTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeElevtypeSamlingInfo" type="ElevtypeElevtypeSamlingInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeSamlingInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeSamlingID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeSamlingNummer" type="ElevtypeSamlingNummerType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeSamlingTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeSamlingInfo" type="ElevtypeSamlingInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeSkoleperiodeInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeSkoleperiodeID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeSamlingRef" type="InternNoegleType"/>
+      <xs:element name="SkoleperiodeRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeSkoleperiodeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeSkoleperiodeInfo" type="ElevtypeSkoleperiodeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeSpecialeInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeSpecialeID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeUddannelseRef" type="InternNoegleType"/>
+      <xs:element name="SpecialeRef" type="InternNoegleType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+      <xs:element name="UddannelseVarighedAar" type="UddannelseVarighedAarType"/>
+      <xs:element name="UddannelseVarighedMaaned" type="UddannelseVarighedMaanedType"/>
+      <xs:element name="SkoleopholdHoved" type="SkoleopholdHovedType"/>
+      <xs:element name="SkoleopholdGF1" type="SkoleopholdGF1Type"/>
+      <xs:element name="SkoleopholdGF2" type="SkoleopholdGF2Type"/>
+      <xs:element name="VarighedEux" type="VarighedEuxType"/>
+      <xs:element name="StudierettetForloebEux" type="StudierettetForloebEuxType"/>
+      <xs:element name="RkvOpholdEuv" type="RkvOpholdEuvType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeSpecialeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeSpecialeInfo" type="ElevtypeSpecialeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ElevtypeUddannelseInfoType">
+    <xs:sequence>
+      <xs:element name="ElevtypeUddannelseID" type="InternNoegleType"/>
+      <xs:element name="ElevtypeRef" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElevtypeUddannelseTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ElevtypeUddannelseInfo" type="ElevtypeUddannelseInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="EvalueringsformInfoType">
+    <xs:sequence>
+      <xs:element name="EvalueringsformID" type="InternNoegleType"/>
+      <xs:element name="Evalueringsform" type="EvalueringsformType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Tidsafhaengig" type="TidsAfhaengigType"/>
+      <xs:element minOccurs="0" name="CensurnormType" type="CensurnormTypeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EvalueringsformTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EvalueringsformInfo" type="EvalueringsformInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="EveGruppeInfoType">
+    <xs:sequence>
+      <xs:element name="EveGruppeID" type="InternNoegleType"/>
+      <xs:element name="EveGruppe" type="EveGruppeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EveGruppeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EveGruppeInfo" type="EveGruppeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="EveGruppeFagInfoType">
+    <xs:sequence>
+      <xs:element name="EveGruppeFagID" type="InternNoegleType"/>
+      <xs:element name="EveGruppeRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EveGruppeFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EveGruppeFagInfo" type="EveGruppeFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="EveGruppeTakstInfoType">
+    <xs:sequence>
+      <xs:element name="EveGruppeTakstID" type="InternNoegleType"/>
+      <xs:element name="EveGruppeRef" type="InternNoegleType"/>
+      <xs:element name="TakstRef" type="InternNoegleType"/>
+      <xs:element name="Slettes" type="SlettesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EveGruppeTakstTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="EveGruppeTakstInfo" type="EveGruppeTakstInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagFaggrupperingsInfoType">
+    <xs:sequence>
+      <xs:element name="FagFaggrupperingID" type="InternNoegleType"/>
+      <xs:element name="FaggrupperingRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagFaggrupperingsTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagFaggrupperingsInfo" type="FagFaggrupperingsInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagFrmSprogInfoType">
+    <xs:sequence>
+      <xs:element name="FagFrmSprogID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="SprogRef" type="InternNoegleType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="LangBetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagFrmSprogTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagFrmSprogInfo" type="FagFrmSprogInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FaggrupperingInfoType">
+    <xs:sequence>
+      <xs:element name="FaggrupperingID" type="InternNoegleType"/>
+      <xs:element name="Faggruppering" type="FaggrupperingType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FaggrupperingTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FaggrupperingInfo" type="FaggrupperingInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagkategoriInfoType">
+    <xs:sequence>
+      <xs:element name="FagkategoriID" type="InternNoegleType"/>
+      <xs:element name="Fagkategori" type="FagkategoriType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagkategoriTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagkategoriInfo" type="FagkategoriInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagKonteringInfoType">
+    <xs:sequence>
+      <xs:element name="FagKonteringID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Finansaar" type="FinansaarType"/>
+      <xs:element minOccurs="0" name="CoesaFormalRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagKonteringTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagKonteringInfo" type="FagKonteringInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagInfoType">
+    <xs:sequence>
+      <xs:element name="FagID" type="InternNoegleType"/>
+      <xs:element name="Fag" type="FagType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element minOccurs="0" name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="FagkategoriRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="KravDbFagRef" type="InternNoegleType"/>
+      <xs:element name="CensorIndberetning" type="CensorIndberetningType"/>
+      <xs:element name="EudProevefag" type="EudProevefagType"/>
+      <xs:element minOccurs="0" name="EctsPoint" type="EctsPointType"/>
+      <xs:element minOccurs="0" name="Dkll" type="DkllType"/>
+      <xs:element minOccurs="0" name="Eqf" type="EqfType"/>
+      <xs:element name="OverskrivVarighed" type="OverskrivVarighedType"/>
+      <xs:element minOccurs="0" name="VarighedDage" type="VarighedDageType"/>
+      <xs:element minOccurs="0" name="VarighedTimer" type="VarighedTimerType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagInfo" type="FagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagProeveInfoType">
+    <xs:sequence>
+      <xs:element name="FagProeveID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="ProevefagJn" type="ProevefagJnType"/>
+      <xs:element name="UnderfagKode" type="UnderfagKodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagProeveTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagProeveInfo" type="FagProeveInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagSpecialeInfoType">
+    <xs:sequence>
+      <xs:element name="FagSpecialeID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="SpecialeRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="SpecialeFagtype" type="SpecialeFagtypeType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+      <xs:element minOccurs="0" name="ElevTypeSamlingRef" type="InternNoegleType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+      <xs:element minOccurs="0" name="RegelgrundlagRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="Afkortning" type="AfkortningType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagSpecialeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagSpecialeInfo" type="FagSpecialeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagTakstInfoType">
+    <xs:sequence>
+      <xs:element name="FagTakstID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="TakstRef" type="InternNoegleType"/>
+      <xs:element name="Slettes" type="SlettesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagTakstTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagTakstInfo" type="FagTakstInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagUddInfoType">
+    <xs:sequence>
+      <xs:element name="FagUddID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+      <xs:element minOccurs="0" name="UddannelseFagtype" type="UddannelseFagtypeType"/>
+      <xs:element minOccurs="0" name="ElevtypeSamlingRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="RegelgrundlagRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="GF1" type="GF1Type"/>
+      <xs:element minOccurs="0" name="GF2" type="GF2Type"/>
+      <xs:element minOccurs="0" name="HF" type="HFType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagUddTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagUddInfo" type="FagUddInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FagUddProeveInfoType">
+    <xs:sequence>
+      <xs:element name="FagUddProeveID" type="InternNoegleType"/>
+      <xs:element name="FagUddRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="IndberetningspligtKode" type="IndberetningspligtKodeType"/>
+      <xs:element minOccurs="0" name="ProevedeltagelseKodeSkr" type="ProevedeltagelseKodeSkrType"/>
+      <xs:element minOccurs="0" name="ProevedeltagelseKodeMdt" type="ProevedeltagelseKodeMdtType"/>
+      <xs:element minOccurs="0" name="CentralCensurKode" type="CentralCensurKodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FagUddProeveTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FagUddProeveInfo" type="FagUddProeveInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FasteUnderfagInfoType">
+    <xs:sequence>
+      <xs:element name="FasteUnderfagID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="UnderfagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FasteUnderfagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FasteUnderfagInfo" type="FasteUnderfagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FormaalsgruppeInfoType">
+    <xs:sequence>
+      <xs:element name="FormaalsgruppeID" type="InternNoegleType"/>
+      <xs:element name="Formaalsgruppe" type="FormaalsgruppeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FormaalsgruppeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FormaalsgruppeInfo" type="FormaalsgruppeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="FrmSprogInfoType">
+    <xs:sequence>
+      <xs:element name="FrmSprogID" type="InternNoegleType"/>
+      <xs:element name="SprogKode" type="SprogKodeType"/>
+      <xs:element name="DanskBetegnelse" type="BetegnelseType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FrmSprogTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FrmSprogInfo" type="FrmSprogInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="GodkendelsePaaSkoleInfoType">
+    <xs:sequence>
+      <xs:element name="GodkendelsePaaSkoleID" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="CoesaFormaalRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Godkendelsestype" type="GodkendelsestypeType"/>
+      <xs:element name="Institutionsnummer" type="InstitutionsnummerType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="Praktikcenter" type="PraktikCenterType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+      <xs:element minOccurs="0" name="UdlaanInst" type="UdlaanInstType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GodkendelsePaaSkoleTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="GodkendelsePaaSkoleInfo" type="GodkendelsePaaSkoleInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="JurEnhedAeAfdelingInfoType">
+    <xs:sequence>
+      <xs:element name="JurEnhedAeAfdelingID" type="InternNoegleType"/>
+      <xs:element name="JurEnhed" type="InstitutionsnummerType"/>
+      <xs:element name="JurEnhedType" type="EnhedTypeType"/>
+      <xs:element name="AeAfdeling" type="InstitutionsnummerType"/>
+      <xs:element name="AeAfdelingType" type="EnhedTypeType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JurEnhedAeAfdelingTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="JurEnhedAeAfdelingInfo" type="JurEnhedAeAfdelingInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KarakterskalaInfoType">
+    <xs:sequence>
+      <xs:element name="KarakterskalaID" type="InternNoegleType"/>
+      <xs:element name="Karakterskala" type="KarakterskalaType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KarakterskalaTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KarakterskalaInfo" type="KarakterskalaInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KaraktertypeInfoType">
+    <xs:sequence>
+      <xs:element name="KarTypID" type="InternNoegleType"/>
+      <xs:element name="Karaktertype" type="KaraktertypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Eksamenstype" type="EksamenstypeKarakterType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KaraktertypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KaraktertypeInfo" type="KaraktertypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KarakterVaerdiInfoType">
+    <xs:sequence>
+      <xs:element name="KarakterVaerdiID" type="InternNoegleType"/>
+      <xs:element name="KarakterVaerdi" type="KarakterVaerdiType"/>
+      <xs:element name="KarakterskalaRef" type="InternNoegleType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Sekvens" type="KarakterSekvensType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KarakterVaerdiTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KarakterVaerdiInfo" type="KarakterVaerdiInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KompetenceInfoType">
+    <xs:sequence>
+      <xs:element name="KompetenceID" type="InternNoegleType"/>
+      <xs:element name="KompetenceKode" type="KompetenceKodeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelseType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KompetenceTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KompetenceInfo" type="KompetenceInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KompetenceFagInfoType">
+    <xs:sequence>
+      <xs:element name="KompetenceFagID" type="InternNoegleType"/>
+      <xs:element name="KompetenceRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KompetenceFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KompetenceFagInfo" type="KompetenceFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="KravDbFagInfoType">
+    <xs:sequence>
+      <xs:element name="KravDbFagID" type="InternNoegleType"/>
+      <xs:element name="KravDbFag" type="FagType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KravDbFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="KravDbFagInfo" type="KravDbFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="LoefteFagInfoType">
+    <xs:sequence>
+      <xs:element name="LoefteFagID" type="InternNoegleType"/>
+      <xs:element name="RegelgrundlagRef" type="InternNoegleType"/>
+      <xs:element name="FraNiveauRef" type="InternNoegleType"/>
+      <xs:element name="TilNiveauRef" type="InternNoegleType"/>
+      <xs:element name="VarighedKlokketimer" type="VarighedKlokkeTimerType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoefteFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="LoefteFagInfo" type="LoefteFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="MaalpindInfoType">
+    <xs:sequence>
+      <xs:element name="MaalpindID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Maalpind" type="MaalpindType"/>
+      <xs:element name="Tekst" type="Tekst2000Type"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MaalpindTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MaalpindInfo" type="MaalpindInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="MultiplanFagInfoType">
+    <xs:sequence>
+      <xs:element name="MultiplanFagID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Bevistekst" type="BevistekstType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultiplanFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MultiplanFagInfo" type="MultiplanFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="MultiplanFagValgmulighederInfoType">
+    <xs:sequence>
+      <xs:element name="ValgmulighedID" type="InternNoegleType"/>
+      <xs:element name="MultiplanFagRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="Sortering" type="SorteringType"/>
+      <xs:element name="Valgmulighed" type="ValgmulighedType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultiplanFagValgmulighederTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MultiplanFagValgmulighederInfo" type="MultiplanFagValgmulighederInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="NiveautypeInfoType">
+    <xs:sequence>
+      <xs:element name="NiveautypeID" type="InternNoegleType"/>
+      <xs:element name="Niveautype" type="NiveautypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelseType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NiveautypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="NiveautypeInfo" type="NiveautypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="NiveauInfoType">
+    <xs:sequence>
+      <xs:element name="NiveauID" type="InternNoegleType"/>
+      <xs:element name="Niveau" type="NiveauType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelseType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="NiveautypeRef" type="InternNoegleType"/>
+      <xs:element name="RangOrden" type="RangOrdenType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NiveauTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="NiveauInfo" type="NiveauInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="PeriodetypeInfoType">
+    <xs:sequence>
+      <xs:element name="PeriodetypeID" type="InternNoegleType"/>
+      <xs:element name="Periodetype" type="PeriodetypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="OverlapTilladtSkoleforloeb" type="OverlapTilladtSkoleforloebType"/>
+      <xs:element name="AUBRefusion" type="AUBRefusionType"/>
+      <xs:element name="OverlapTilladtSkolepraktik" type="OverlapTilladtSkolePraktikType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeriodetypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="PeriodetypeInfo" type="PeriodetypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ProeveOmraadeInfoType">
+    <xs:sequence>
+      <xs:element name="ProeveOmraadeID" type="InternNoegleType"/>
+      <xs:element name="ProeveOmraade" type="ProeveOmraadeType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProeveOmraadeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ProeveOmraadeInfo" type="ProeveOmraadeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ProeveomraadeUddInfoType">
+    <xs:sequence>
+      <xs:element name="ProeveOmraadeUddID" type="InternNoegleType"/>
+      <xs:element name="ProeveOmraadeRef" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProeveomraadeUddTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ProeveomraadeUddInfo" type="ProeveomraadeUddInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ProeveInfoType">
+    <xs:sequence>
+      <xs:element name="ProeveID" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="ProeveKode" type="ProeveKodeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelseType"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="KarakterskalaRef" type="InternNoegleType"/>
+      <xs:element name="EvalueringsformRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="SkrAntalCensorer" type="SkrAntalCensorerType"/>
+      <xs:element minOccurs="0" name="SkrCentraltStilledeOpg" type="SkrCentraltStilledeOpgType"/>
+      <xs:element name="UdtraekHeleHoldet" type="UdtraekHeleHoldetType"/>
+      <xs:element name="Proeveafholdelsesform" type="ProeveafholdelsesformType"/>
+      <xs:element name="OblVedMangeANiveauFag" type="OblVedMangeANiveuaFagType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProeveTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ProeveInfo" type="ProeveInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="RegelgrundlagInfoType">
+    <xs:sequence>
+      <xs:element name="RegelgrundlagID" type="InternNoegleType"/>
+      <xs:element name="Regelgrundlag" type="RegelgrundlagType"/>
+      <xs:element name="Titel" type="TitelType"/>
+      <xs:element name="Ikrafttraedelsesdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Url" type="UrlType"/>
+      <xs:element minOccurs="0" name="RegelgrundlagRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegelgrundlagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="RegelgrundlagInfo" type="RegelgrundlagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="RegelgrundlagFagInfoType">
+    <xs:sequence>
+      <xs:element name="RegelgrundlagFagID" type="InternNoegleType"/>
+      <xs:element name="RegelgrundlagRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegelgrundlagFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="RegelgrundlagFagInfo" type="RegelgrundlagFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="RegelgrundlagUddInfoType">
+    <xs:sequence>
+      <xs:element name="RegelgrundlagUddID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="RegelgrundlagRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegelgrundlagUddTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="RegelgrundlagUddInfo" type="RegelgrundlagUddInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ResultatformInfoType">
+    <xs:sequence>
+      <xs:element name="ResultatformID" type="InternNoegleType"/>
+      <xs:element name="EvalueringsformRef" type="InternNoegleType"/>
+      <xs:element name="KarakterTypeRef" type="InternNoegleType"/>
+      <xs:element name="KarakterSkalaRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultatformTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ResultatformInfo" type="ResultatformInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="ResultatformFagInfoType">
+    <xs:sequence>
+      <xs:element name="ResformFagID" type="InternNoegleType"/>
+      <xs:element name="ResultatformRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+      <xs:element name="Slettes" type="SlettesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultatformFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ResultatformFagInfo" type="ResultatformFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="SkoleperiodeInfoType">
+    <xs:sequence>
+      <xs:element name="SkoleperiodeID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="SpecialeRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="AdgangsvejRef" type="InternNoegleType"/>
+      <xs:element name="Skoleperiode" type="SkoleperiodeType"/>
+      <xs:element minOccurs="0" name="PeriodetypeRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SkoleperiodeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SkoleperiodeInfo" type="SkoleperiodeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="SpecialeInfoType">
+    <xs:sequence>
+      <xs:element name="SpecialeID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="Speciale" type="SpecialeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element minOccurs="0" name="LukketForOptag" type="xs:date"/>
+      <xs:element minOccurs="0" name="Dkll" type="DkllType"/>
+      <xs:element minOccurs="0" name="Eqf" type="EqfType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpecialeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SpecialeInfo" type="SpecialeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="SpecialeTilSpecialeInfoType">
+    <xs:sequence>
+      <xs:element name="SpecialeTilSpecialeID" type="InternNoegleType"/>
+      <xs:element name="SpecialeFRef" type="InternNoegleType"/>
+      <xs:element name="SpecialeBRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SpecialeTilSpecialeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SpecialeTilSpecialeInfo" type="SpecialeTilSpecialeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="StudieretHfOverbygInfoType">
+    <xs:sequence>
+      <xs:element name="StudieretHfOverbygID" type="InternNoegleType"/>
+      <xs:element name="StudieretHfOverbyg" type="StudieretHfOverbygType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="Startaar" type="FinansaarType"/>
+      <xs:element name="Titel" type="TitelType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StudieretHfOverbygTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="StudieretHfOverbygInfo" type="StudieretHfOverbygInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="StudieretHfOverbygFagInfoType">
+    <xs:sequence>
+      <xs:element name="StudieretHfOverbygFagID" type="InternNoegleType"/>
+      <xs:element name="StudieretHfOverbygRef" type="InternNoegleType"/>
+      <xs:element name="FagRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StudieretHfOverbygFagTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="StudieretHfOverbygFagInfo" type="StudieretHfOverbygFagInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="SuUddannelserInfoType">
+    <xs:sequence>
+      <xs:element name="SuUddannelseID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="SpecialeRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="AdgangsvejRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="ElevtypeRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="Maaneder" type="MaenederType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SuUddannelserTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SuUddannelserInfo" type="SuUddannelserInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TilskudsmaerkeInfoType">
+    <xs:sequence>
+      <xs:element name="TilskudsmaerkeID" type="InternNoegleType"/>
+      <xs:element name="Tilskudsmaerke" type="TilskudsmaerkeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TilskudsmaerkeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TilskudsmaerkeInfo" type="TilskudsmaerkeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TilskudsmaerkeTmkInfoType">
+    <xs:sequence>
+      <xs:element name="TilskudsmaerkeTmkID" type="InternNoegleType"/>
+      <xs:element name="TilskudsmaerkeRef" type="InternNoegleType"/>
+      <xs:element name="TmkRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TilskudsmaerkeTmkTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TilskudsmaerkeTmkInfo" type="TilskudsmaerkeTmkInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TmkInfoType">
+    <xs:sequence>
+      <xs:element name="TmkID" type="InternNoegleType"/>
+      <xs:element name="Kombination" type="TmkType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Opgoerelsesmetode" type="OpgoerelsesmetodeType"/>
+      <xs:element minOccurs="0" name="IndberetFag" type="IndberetFagType"/>
+      <xs:element minOccurs="0" name="Bidrag" type="UdloeserBidragType"/>
+      <xs:element minOccurs="0" name="TmkType" type="TmkTypeType"/>
+      <xs:element minOccurs="0" name="FjernUndervisningsAndel" type="FjernUndervisningsAndelType"/>
+      <xs:element minOccurs="0" name="TmkRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="Udslusning" type="UdslusningType"/>
+      <xs:element minOccurs="0" name="Kombidrag" type="KombidragType"/>
+      <xs:element minOccurs="0" name="Driftstilskud" type="DriftstilskudType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TmkTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TmkInfo" type="TmkInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TmkSkoleperiodeInfoType">
+    <xs:sequence>
+      <xs:element name="TmkSkoleperiodeID" type="InternNoegleType"/>
+      <xs:element name="SkoleperiodeRef" type="InternNoegleType"/>
+      <xs:element name="TmkRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="CoesaFormaalRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TmkSkoleperiodeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TmkSkoleperiodeInfo" type="TmkSkoleperiodeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TaelleperiodeInfoType">
+    <xs:sequence>
+      <xs:element name="TaelleperiodeID" type="InternNoegleType"/>
+      <xs:element name="SkoleperiodeRef" type="InternNoegleType"/>
+      <xs:element name="Taelleperiode" type="TaelleperiodeType"/>
+      <xs:element name="RelativTaelledag">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Varighed" type="VarighedDageType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaelleperiodeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TaelleperiodeInfo" type="TaelleperiodeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TaksonomiInfoType">
+    <xs:sequence>
+      <xs:element name="TaksonomiID" type="InternNoegleType"/>
+      <xs:element name="Taksonomi" type="TaksonomiType"/>
+      <xs:element name="Betegnelse" type="LangBetegnelseType"/>
+      <xs:element name="UdvalgRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaksonomiTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TaksonomiInfo" type="TaksonomiInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TaksonomiVaerdiInfoType">
+    <xs:sequence>
+      <xs:element name="TaksonomiIVaerdiD" type="InternNoegleType"/>
+      <xs:element name="TaksonomiRef" type="InternNoegleType"/>
+      <xs:element name="TaksonomiVaerdi" type="TaksonomiVaerdiType"/>
+      <xs:element name="Betegnelse" type="LangBetegnelseType"/>
+      <xs:element name="RangOrden" type="RangOrdenType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaksonomiVaerdiTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TaksonomiVaerdiInfo" type="TaksonomiVaerdiInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TakstInfoType">
+    <xs:sequence>
+      <xs:element name="TakstID" type="InternNoegleType"/>
+      <xs:element name="Finansaar" type="FinansaarType"/>
+      <xs:element name="TaksttypeRef" type="InternNoegleType"/>
+      <xs:element name="Takstnr" type="TakstnrType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Takst" type="TakstType"/>
+      <xs:element minOccurs="0" name="TakstMedMoms" type="TakstType"/>
+      <xs:element name="Slettes" type="SlettesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TakstTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TakstInfo" type="TakstInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TaksttypeInfoType">
+    <xs:sequence>
+      <xs:element name="TaksttypeID" type="InternNoegleType"/>
+      <xs:element name="Taksttype" type="TaksttypeType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="Varighedsuafhengig" type="VarighedsuafhengigType"/>
+      <xs:element name="Skole" type="SkoleType"/>
+      <xs:element name="Fjern" type="FjernType"/>
+      <xs:element name="Virk" type="VirkType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaksttypeTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TaksttypeInfo" type="TaksttypeInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="TmkAauInfoType">
+    <xs:sequence>
+      <xs:element name="TmkAauID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="TmkRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TmkAauTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TmkAauInfo" type="TmkAauInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddannelseInfoType">
+    <xs:sequence>
+      <xs:element name="UddannelseID" type="InternNoegleType"/>
+      <xs:element name="CoesaFormaalRef" type="InternNoegleType"/>
+      <xs:element name="UddannelseVersion" type="UddannelseVersionType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="BetegnelseType"/>
+      <xs:element name="UddaType" type="UddaTypeType"/>
+      <xs:element minOccurs="0" name="LukketForOptag" type="xs:date"/>
+      <xs:element minOccurs="0" name="ElevplanUddannelse" type="ElevplanUddannelseType"/>
+      <xs:element minOccurs="0" name="TaksonomiRef" type="InternNoegleType"/>
+      <xs:element minOccurs="0" name="BevisTilEksamensDB" type="BevisTilEksamensDBType"/>
+      <xs:element minOccurs="0" name="Dkll" type="DkllType"/>
+      <xs:element minOccurs="0" name="Eqf" type="EqfType"/>
+      <xs:element name="ElevtypeJaNej" type="ElevtypeJaNejType"/>
+      <xs:element name="GF1" type="GF1Type"/>
+      <xs:element name="GF2" type="GF2Type"/>
+      <xs:element name="HF" type="HFType"/>
+      <xs:element minOccurs="0" name="StatistikIndberetning" type="StatistikIndberetningType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddannelseTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddannelseInfo" type="UddannelseInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddannelseProeveInfoType">
+    <xs:sequence>
+      <xs:element name="UddannelseProeveID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="CentraltStilledeOpgaver" type="CentraltStilledeOpgaverType"/>
+      <xs:element minOccurs="0" name="SkrAntalCensorer" type="SkrAntalCensorerType"/>
+      <xs:element minOccurs="0" name="AntalTilladteProeverPrDag" type="AntalTilladteProeverPrDagType"/>
+      <xs:element minOccurs="0" name="IndberetningspligtKode" type="IndberetningspligtKodeType"/>
+      <xs:element minOccurs="0" name="ProevedeltagelseKodeSkr" type="ProevedeltagelseKodeSkrType"/>
+      <xs:element minOccurs="0" name="ProevedeltagelseKodeMdt" type="ProevedeltagelseKodeMdtType"/>
+      <xs:element minOccurs="0" name="CentralCensurKode" type="CentralCensurKodeType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddannelseProeveTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddannelseProeveInfo" type="UddannelseProeveInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddannelseTakstInfoType">
+    <xs:sequence>
+      <xs:element name="UddannelseTakstID" type="InternNoegleType"/>
+      <xs:element name="CoesaFormaalRef" type="InternNoegleType"/>
+      <xs:element name="TakstRef" type="InternNoegleType"/>
+      <xs:element name="Slettes" type="SlettesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddannelseTakstTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddannelseTakstInfo" type="UddannelseTakstInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddannelseAarsnormInfoType">
+    <xs:sequence>
+      <xs:element name="UddannelseAarsnormID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="Startdato" type="xs:date"/>
+      <xs:element minOccurs="0" name="Slutdato" type="xs:date"/>
+      <xs:element name="AarsnormKlokketimer" type="VarighedKlokkeTimerType"/>
+      <xs:element minOccurs="0" name="ReguleringsFaktor" type="ReguleringsFaktorType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddannelseAarsnormTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddannelseAarsnormInfo" type="UddannelseAarsnormInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddannelsesKarakteristikaInfoType">
+    <xs:sequence>
+      <xs:element name="UddannelseKarakID" type="InternNoegleType"/>
+      <xs:element name="CoesaFormaalRef" type="InternNoegleType"/>
+      <xs:element name="UddannelsesKarak" type="UddannelsesKarakType"/>
+      <xs:element name="GyldigFra" type="xs:date"/>
+      <xs:element minOccurs="0" name="GyldigTil" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddannelsesKarakteristikaTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddannelsesKarakteristikaInfo" type="UddannelsesKarakteristikaInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UddFrmSprogInfoType">
+    <xs:sequence>
+      <xs:element name="UddFrmSprogID" type="InternNoegleType"/>
+      <xs:element name="UddannelseRef" type="InternNoegleType"/>
+      <xs:element name="SprogRef" type="InternNoegleType"/>
+      <xs:element name="KortBetegnelse" type="KortBetegnelse15Type"/>
+      <xs:element name="Betegnelse" type="LangBetegnelseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UddFrmSprogTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UddFrmSprogInfo" type="UddFrmSprogInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UdmeldingsInformationInfoType">
+    <xs:sequence>
+      <xs:element name="UdmeldingsId" type="InternNoegleType"/>
+      <xs:element name="UdmeldingsNummer" type="UdmeldingsNummerType"/>
+      <xs:element name="UdmeldingsDato" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UdmeldingsInformationType">
+    <xs:sequence>
+      <xs:element name="UdmeldingsInformationInfo" type="UdmeldingsInformationInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=======================================================-->
+  <xs:complexType name="UdvalgInfoType">
+    <xs:sequence>
+      <xs:element name="UdvalgID" type="InternNoegleType"/>
+      <xs:element name="Udvalg" type="UdvalgType"/>
+      <xs:element name="UdvalgsType" type="UdvalgsTypeType"/>
+      <xs:element name="Navn" type="NavnType"/>
+      <xs:element minOccurs="0" name="Adresse1" type="LangAdresseType"/>
+      <xs:element minOccurs="0" name="Adresse2" type="LangAdresseType"/>
+      <xs:element minOccurs="0" name="Adresse3" type="LangAdresseType"/>
+      <xs:element minOccurs="0" name="Telefon" type="LangTelefonType"/>
+      <xs:element minOccurs="0" name="Fax" type="LangFaxType"/>
+      <xs:element minOccurs="0" name="Email" type="LangEmailType"/>
+      <xs:element minOccurs="0" name="KontaktPerson" type="LangKontaktPersonType"/>
+      <xs:element minOccurs="0" name="KontaktPersonEmail" type="LangEmailType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UdvalgTabelType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="UdvalgInfo" type="UdvalgInfoType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=sourceservice/FaellesTyperV1-5.xsd</con:url>
+      <con:content><![CDATA[<!--edited with XMLSpy v2019 sp2 (http://www.altova.com) by Frank Rise (Styrelsen for IT og Læring)-->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xprs.dk/2005/08/17/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xprs.dk/2005/08/17/">
+  <!--=========================================================================-->
+  <!--Simple Types-->
+  <!--=========================================================================-->
+  <xs:simpleType name="AdgangsvejType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AeTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AfgangsAarsagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AfkortningType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AndetTekstType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AntalTilladteProeverPrDagType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="AUBRefusionType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BedoemmelserType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BedomGrundlagUploadType">
+    <xs:restriction base="xs:base64Binary"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BedomGrundlagTekstType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BedomKritUploadType">
+    <xs:restriction base="xs:base64Binary"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BedomKritTekstType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BeregningstypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BeskrivelseTekstType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BeskrivelseUploadType">
+    <xs:restriction base="xs:base64Binary"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BetegnelseType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BevisFormatType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BevislinjeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="240"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BevislinjeNrType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BevistekstType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BevisTilEksamensDBType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DispLavAktivitetType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DispSaerligeOmType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="BranchecertifikatType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CensorIndberetningType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CensurnormTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CentralCensurKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CentraltStilledeOpgaverType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertAdgMalType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertAndetSprogType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertAndetSprogBemaerkningType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertBemaerkningType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertBeskrivelseType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertBrancheType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertifikatuddannelserType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertHjemmelType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertKontrUddType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertMeritEudType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertNavnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertUdstederType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CertMyndighedType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="CoesaFormaalType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DeltagerBetalingType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DispensationTil3AarsRegelType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DkllType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DomainType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DomainVaerdiStringType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DomainVaerdiIntegerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="DriftstilskudType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EasyPIndberetType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EctsPointType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EksamenType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EksamenstypeKarakterType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ElevplanUddannelseType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ElevtypeByggeklodsType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ElevtypeJaNejType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ElevtypeSamlingNummerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ElevtypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EnhedTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EqfType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EudProevefagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EuxType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EvalueringsformType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="EveGruppeType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FaelleskatalogType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FaggrupperingType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FagTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FjernType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FjernUndervisningsAndelType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FormaalType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="GF1Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="GF2Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="GymType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="HFType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="IndberetFagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="IndberetningspligtKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="IndholdType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="InstitutionsnavnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="InstitutionsnummerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="InternNoegleType">
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KarakterskalaType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KarakterVaerdiType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KombidragType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KompetenceKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KortBetegnelseType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KortBetegnelse15Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangAdresseType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangBetegnelseType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="250"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangEmailType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangFaxType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangKontaktPersonType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LangTelefonType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MaalformuleringType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MaenederType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MeritTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MesterlereType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MundtligProveType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="NavnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="NiveauType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="NiveautypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OblVedMangeANiveuaFagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OptagelseType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OpkrevningType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OverlapTilladtSkoleforloebType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OverlapTilladtSkolePraktikType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OverskrivVarighedType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="PakkeNummerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="PraktikCenterType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="PraktiskProveType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProcentType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveafholdelsesformType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProevedeltagelseKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProevedeltagelseKodeMdtType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProevedeltagelseKodeSkrType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProevefagskategoriType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProveFjernundType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveholdIdType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveholdNavnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveKaedeIdType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveKaedeLoebeNrType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveOmraadeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProveSelvstudType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveterminType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProeveterminstypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="PskoleEudType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RangOrdenType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RegelnrType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RegelTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RekvirentGebyrType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SaerligtBehovType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleopholdGF1Type">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleopholdGF2Type">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleopholdHovedType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleaarType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkolepraktikType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkrAntalCensorerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkrCentraltStilledeOpgType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkriftligProveType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SorteringType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SpecialeFagtypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SprogKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="StillerUdstyrTilRType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="StudieretHfOverbygType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="StudieretningsHovedfagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TaksonomiType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TaksonomiVaerdiType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TelefonnummerType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TilskudsmaerkeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TitelType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TmkType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TmkTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelseFagtypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelsesPeriodeNrType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelseVarighedMaanedType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="3"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelseVarighedAarType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelseVersionType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddaTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdloeserBidragType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdmeldingsNummerType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdvalgType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdvalgsTypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdtraekHeleHoldetType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdvekslingstypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UnderfagKodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UngeDatabaseAfgangsAarsagType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UngeDatabaseIndberetType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TvungenPerspektivType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UngdomVoksenType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UrlType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="300"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ValgmulighedType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedType">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedDageType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedEuxType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedKlokkeTimerType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="6"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedsuafhengigType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VarighedTimerType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="6"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="VirkType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <!--=========================================================================-->
+  <xs:simpleType name="FagkategoriType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="16"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FinansaarType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="FormaalsgruppeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="GennemfoertType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="GodkendelsestypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KarakterSekvensType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KaraktertypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="KvalificeretTilHovedforloebType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="IndSpecFagtypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="LedelsesInformationType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="MaalpindType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OmraadeFagtypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="OpgoerelsesmetodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="Oplysning1Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="Oplysning2Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="PeriodetypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ProevefagJnType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="ReguleringsFaktorType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="5"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RekvirenttypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SkoleperiodeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SlettesType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="SpecialeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TaelleperiodeType">
+    <xs:restriction base="xs:int">
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TakstnrType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TakstType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="13"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TaksttypeType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TalentsporType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="Tekst2000Type">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="TidsAfhaengigType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="StatistikIndberetningType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="StudierettetForloebEuxType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="RkvOpholdEuvType">
+    <xs:restriction base="xs:decimal">
+      <xs:totalDigits value="4"/>
+      <xs:fractionDigits value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UddannelsesKarakType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdlaanInstType">
+    <xs:restriction base="xs:integer">
+      <xs:totalDigits value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <xs:simpleType name="UdslusningType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--=========================================================================-->
+  <!--Complex Types-->
+  <!--=========================================================================-->
+  <xs:complexType name="FagType">
+    <xs:sequence>
+      <xs:element name="FagNummer">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="NiveauRef" type="InternNoegleType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--=========================================================================-->
+  <xs:complexType name="RegelgrundlagType">
+    <xs:sequence>
+      <xs:element name="Regelnr" type="RegelnrType"/>
+      <xs:element name="RegelDato" type="xs:date"/>
+      <xs:element name="RegelType" type="RegelTypeType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+    <con:part>
+      <con:url>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5?xsd=common-resources/CommonTypes.xsd</con:url>
+      <con:content><![CDATA[<!--This namespace placeholder must be updated when it is imported-->
+<xs:schema elementFormDefault="qualified" targetNamespace="http://ipl.stil.dk/services/cosa/umo/v1.5" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ipl.stil.dk/services/cosa/umo/v1.5">
+  <xs:annotation>
+    <xs:documentation>Common types version 3.0 for Integrationsplatformen.</xs:documentation>
+  </xs:annotation>
+  <!--Common elements-->
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Status">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="up"/>
+              <xs:enumeration value="down"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Identifier">
+    <xs:annotation>
+      <xs:documentation>The purpose of this element is to serve to log the transaction:
+                    SystemName - The name of your system
+                    SystemTransactionID - A particular identifier to give the transaction
+                This will make it quicker to retrieve your request from the logs, if something goes wrong.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SystemName" type="tns:RestrictedString"/>
+        <xs:element name="SystemTransactionID" type="tns:RestrictedString"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CorrelationID" type="tns:UUIDType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Integrationsplatformen generates a unique ID for all requests. This element is used to provide the ID
+                for calling systems for better support.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ServiceFaultDetailer">
+    <xs:annotation>
+      <xs:documentation>The purpose of this element is to provide detailed information if an error occurs.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:CorrelationID"/>
+        <xs:element name="Timestamp" type="xs:dateTime"/>
+        <xs:element name="ErrorCode" type="tns:ErrorCodeType"/>
+        <xs:element name="ErrorMessage" type="tns:ErrorMessageType"/>
+        <xs:element minOccurs="0" name="Details" type="tns:DetailsType"/>
+        <xs:element minOccurs="0" name="SourceSystemError" type="tns:SourceSystemErrorType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InstitutionNumber" type="tns:InstitutionNumberType">
+    <xs:annotation>
+      <xs:documentation>The purpose of this element is to provide the institution number if the service requires authorization on level
+                Serviceniveau + Dataadgangsniveau.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <!--Common types-->
+  <xs:simpleType name="RestrictedString">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z\d\-_]+"/>
+      <xs:maxLength value="100"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UUIDType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of a UUID.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ErrorCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of error codes specific to Integrationsplatformen.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="ErrorMessageType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of error messages specific to Integrationsplatformen.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:simpleType name="DetailsType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of details in error messages.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <xs:complexType name="SourceSystemErrorType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of source system errors.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="SourceSystemName" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="Details" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="InstitutionNumberType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The representation of allowed institution numbers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z0-9]{6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content>
+      <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://et.integrationsplatformen.dk/services/COSA/UMO/v1.5</con:endpoint>
+  </con:endpoints>
+</con:interface>
